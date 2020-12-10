@@ -71,13 +71,16 @@ export default {
     localeDate() {
       return (new Date(this.date)).toLocaleDateString();
     },
+    contacts() {
+      return this.$store.getters.contacts;
+    }
   },
   methods: {
     checkForm() {
       this.createContact();
     },
     createContact() {
-      const newId = this.$store.getters.contacts.length + 1;
+      const newId = this.contacts.sort((a, b) => a.id > b.id)[this.contacts.length - 1].id + 1;
       const newContact = {
         id: newId,
         email: this.contact.email,
@@ -94,6 +97,7 @@ export default {
   },
   created() {
       this.intervalId = setInterval(() => this.date = Date.now(), 1000);
+
   },
   beforeDestroy() {
       if (this.intervalId) clearInterval(this.intervalId);
