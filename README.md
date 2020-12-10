@@ -1,4 +1,4 @@
-# fort-test
+# vue-contact-list
 
 ## Project setup
 ```
