@@ -1,40 +1,43 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-12 h2 text-muted mt-5">Список пользователей</div>
-      <div class="form-group col-12 mt-2">
-        <div class="row">
-          <input
-            class="col-4 offset-2 form-control"
-            type="search"
-            placeholder="Поиск"
-            v-model.lazy="search"
-            minlength="2"
-            required
-            @keypress.enter="searchContact()"
-          />
-          <button class="btn btn-sm btn-success col-1" @click="searchContact()">
-            Искать
-          </button>
-          <router-link
-            tag="button"
-            class="btn btn-sm btn-outline-info ml-1"
-            to="/new"
-          >
-            Добавить
-          </router-link>
-          <button class="btn btn-sm btn-outline-primary ml-1" @click="onEdit()">
-            Редактировать
-          </button>
-          <button
-            class="btn btn-sm btn-outline-danger ml-1"
-            @click="onDelete()"
-          >
-            Удалить
-          </button>
+      <div class="row">
+        <div class="col-12 h2 text-muted mt-5">Список пользователей</div>
+        <div class="form-group col-12 mt-2">
+          <div class="col-12 col-md-6 col-lg-8 mt-2 d-inline-flex justify-content-center">
+            <input
+              class="form-control col-8 offset-1"
+              type="search"
+              placeholder="Поиск"
+              v-model.lazy="search"
+              minlength="2"
+              required
+              @keypress.enter="searchContact()"
+            />
+            <button
+              class="btn btn-sm btn-success d-inline"
+              @click="searchContact()"
+            >
+              Искать
+            </button>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 d-inline-flex mt-2 justify-content-center">
+            <router-link tag="button" class="btn btn-outline-info" to="/new">
+              Добавить
+            </router-link>
+            <button class="btn btn-outline-primary ml-1" @click="onEdit()">
+              Редактировать
+            </button>
+            <button class="btn btn-outline-danger ml-1" @click="onDelete()">
+              Удалить
+            </button>
+          </div>
+          </div>
         </div>
         <div class="row">
-          <div class="col mt-2 text-primary" v-if="canEdit && !canDelete">
+          <div
+            class="col-12 mt-2 text-primary"
+            v-if="canEdit && !canDelete"
+          >
             Кликните на пользователя для редактирования или нажмите повторно
           </div>
           <div class="col mt-2 text-danger" v-if="canDelete && !canEdit">
@@ -102,8 +105,6 @@
           Нажмите чтобы вернуться ко всем контактам
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
