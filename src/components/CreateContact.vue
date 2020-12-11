@@ -17,7 +17,7 @@
             <tbody>
                <tr>
                 <td><input class="form-control email" id="email" type="email" v-model="contact.email" required></td>
-                <td><input class="form-control" id="password" type="password" v-model="contact.password" required></td>
+                <td><input class="form-control" id="password" type="text" v-model="contact.password" required></td>
                 <td><input class="form-control" id="phone" type="phone" v-model="contact.phone" required></td>
                 <td><input class="form-control" id="fullName" type="text" v-model="contact.fullName" required></td>
                 <td><input class="form-control" id="status" type="text" v-model="contact.status" required></td>

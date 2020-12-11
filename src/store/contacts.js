@@ -51,11 +51,10 @@ export default {
     CREATE_CONTACT(state, newContact) {
       state.contacts.push(newContact);
     },
-    SAVE_CONTACT(state, newContact) {
-      const index = newContact.id - 1;
-      const contacts = state.contacts.slice();
-      contacts.splice(index, 1, newContact);
+    async SAVE_CONTACT(state, newContact) {
+      const contacts = state.contacts.filter((c) => c.id != newContact.id);
       state.contacts = contacts;
+      state.contacts.push(newContact);
     },
     SORT_CONTACTS(state, sortParam) {
       const contacts = state.contacts.sort((a, b) =>

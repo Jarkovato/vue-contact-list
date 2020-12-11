@@ -11,7 +11,7 @@
               v-model.lazy="search"
               minlength="2"
               required
-              @keypress.enter="searchContact()"
+              
             />
             <button
               class="btn btn-sm btn-success d-inline"
