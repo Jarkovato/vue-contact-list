@@ -1,5 +1,7 @@
 # vue-contact-list
 
+## deploy https://jarkovato.github.io/vue-contact-list/
+
 ## Project setup
 ```
 npm install
